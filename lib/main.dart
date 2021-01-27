@@ -1,7 +1,6 @@
-import 'dart:math' as Math;
+import 'package:custom_paint/routes/curves.dart';
 import 'package:custom_paint/routes/polygons.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 void main() {
   runApp(MyApp());
@@ -34,8 +33,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
   int itemSelectedIndex = 0;
 
-  List<Widget> pageList = [
-    PolygonByTrignomentryPage()
+  List pageList = [
+    PolygonByTrignomentryPage(),
+    CurvesPage(),
+    CurvesPage()
   ];
   
   @override
@@ -51,8 +52,9 @@ class _MyHomePageState extends State<MyHomePage> {
               icon: Icon(Icons.train_outlined), label: "Trignometry Polygons"),
           BottomNavigationBarItem(
               icon: Icon(Icons.circle), label: "Curves land"),
-          BottomNavigationBarItem(icon: Icon(Icons.access_alarm), label: "Null")
+          BottomNavigationBarItem(icon: Icon(Icons.access_alarm), label: "Nothing")
         ],
+        currentIndex: itemSelectedIndex,
         onTap: (index) => setState(() => itemSelectedIndex = index),
       ),
     );
